@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Data;
 using System.Drawing.Drawing2D;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Diagnostics;
+using System;
 
 namespace Recipes.UI.Controllers
 {
@@ -117,6 +120,27 @@ namespace Recipes.UI.Controllers
             var info = await infoDishRepository.GetInfoDishDto(id);
             return View(info);
         }
-        
+
+        public async Task<IActionResult> Search(string title, string difficulty, string cookingTime)
+        {
+            HttpClient client = new();
+
+            string path = this.Request.Scheme + "://" + this.Request.Host.Value + "/api/search/" + title + "/" + difficulty + "/" + cookingTime;
+            Debug.WriteLine("Search API path: " + path);
+
+            IEnumerable<InfoDish> dishes = null;
+
+            HttpResponseMessage response = await client.GetAsync(path);
+
+            if (response.IsSuccessStatusCode)
+            {
+                dishes = JsonConvert.DeserializeObject<IEnumerable<InfoDish>>(await response.Content.ReadAsStringAsync());
+
+                ViewBag.Search = true;
+            }
+
+            return View("Index", dishes);
+        }
+
     }
 }
