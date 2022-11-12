@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Recipes.Core.Migrations
 {
-    public partial class init1 : Migration
+    public partial class Init3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -212,20 +212,39 @@ namespace Recipes.Core.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Saves",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    userId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    infoDishId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Saves", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Saves_AspNetUsers_userId",
+                        column: x => x.userId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Saves_InfoDishes_infoDishId",
+                        column: x => x.infoDishId,
+                        principalTable: "InfoDishes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-<<<<<<< Updated upstream:Recipes/Recipes.Core/Migrations/20221112115320_init1.cs
-                    { "03806760-b913-402f-81fa-8e2e1cb9f2b2", "9bdd5573-49bd-4e2e-8f7d-96468835ad28", "Admin", "ADMIN" },
-                    { "4a4dfafd-57d1-4169-a238-b017f4e8a81a", "c8530f43-4c71-409b-9dda-4e15cd489645", "User", "USER" },
-                    { "a97639bb-fbdd-46b4-ab20-5cc170c39bc6", "dd4c36de-0e9c-4856-a8a5-ac9b647bb79e", "Manager", "MANAGER" }
-=======
-                    { "0cd6284e-47fb-4d76-ba0b-587ff7091d4b", "7a77ad23-6209-4b6f-beee-d2b96343a210", "Manager", "MANAGER" },
-                    { "5ee88ac3-2a1f-4f9f-b58b-2a51793d479c", "c5cf8cf7-88c8-4acd-bbd8-ac0b69341155", "User", "USER" },
-                    { "dfc014e7-9f2d-4d8f-8320-4036afe25bfa", "f3ae5392-7011-4257-b3a9-70ec3ba8eb4a", "Admin", "ADMIN" }
->>>>>>> Stashed changes:Recipes/Recipes.Core/Migrations/20221112162934_init1.cs
+                    { "4b343352-1023-4d36-b925-795d7ec11953", "6672a5c5-9b7d-4374-8dc5-21fbdc831ea6", "Manager", "MANAGER" },
+                    { "64c1bc41-d7f8-4c02-b66a-755bd8e8467a", "49297e4b-db09-4099-a9b8-f9b0514e18bd", "User", "USER" },
+                    { "cb76ba20-b170-412c-86d5-ef8c7a634561", "32538c27-a9b0-429a-800f-1f5366a69197", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -233,15 +252,9 @@ namespace Recipes.Core.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-<<<<<<< Updated upstream:Recipes/Recipes.Core/Migrations/20221112115320_init1.cs
-                    { "19e03eb0-dd08-4447-b305-917572b6554f", 0, "9ac99429-e049-4782-869b-5ca35e558037", "manager@recipes.com", true, null, null, false, null, "MANAGER@RECIPES.COM", "MANAGER@RECIPES.COM", "AQAAAAEAACcQAAAAECRFlppYOesWnjNO1CSx8cOeH9qJKrOamI7pT11MNHkxga5Mmj50fRtbtMMNFHSLcA==", null, false, "eb4d2d28-2cec-45a2-acb8-44056d17b959", false, "manager@recipes.com" },
-                    { "8bd7d40c-1aa7-4288-81ee-2686511fc442", 0, "6707cc11-068d-424f-afc8-34ce0f413e16", "user@recipes.com", true, null, null, false, null, "USER@RECIPES.COM", "USER@RECIPES.COM", "AQAAAAEAACcQAAAAEKbH0yjocI/FkZ0dI3Vxv0ynp+RlvXTUi9e9gxL65rg1YDMmHlvVbtmevkGV/QQ2yQ==", null, false, "7b90e305-bbb5-4487-b3d6-f8266b82041d", false, "user@recipes.com" },
-                    { "ca3f9430-8795-45b5-88eb-216c2fcd063e", 0, "899d2673-cd75-45b6-9715-87055b43de6f", "admin@recipes.com", true, null, null, false, null, "ADMIN@RECIPES.COM", "ADMIN@RECIPES.COM", "AQAAAAEAACcQAAAAEPcRQYb7dKQbBgeJkKOdWC5ZAW/TkJQMFlucb2bFmM968FtXcHDpFRloJyRYDhuDRQ==", null, false, "aceb4754-1310-45ed-b065-cada52c559a9", false, "admin@recipes.com" }
-=======
-                    { "08170544-0f90-48f8-91de-4b2d060c11fd", 0, "cf4f59f4-fecf-4dea-81f4-6077dabbfafe", "user@recipes.com", true, null, null, false, null, "USER@RECIPES.COM", "USER@RECIPES.COM", "AQAAAAEAACcQAAAAEKHUCu+WyoNDMh/zmbsNADoJlRaBhzgwrvT201h/RGRi6HSN4g5MkjMEOQKh6RJnPg==", null, false, "8770d008-e7a2-4859-b2d2-86c6433c824c", false, "user@recipes.com" },
-                    { "568da135-a8a5-4687-bda9-c89f039fdb84", 0, "8b975300-4f59-4e83-9415-d77ac4fda27a", "manager@recipes.com", true, null, null, false, null, "MANAGER@RECIPES.COM", "MANAGER@RECIPES.COM", "AQAAAAEAACcQAAAAEPn8EcvMI8F0QcA2C+Si36B/i2t5ZLbjTfvNZiGIJPDFj3XxPpqRHqwAca+qs9USPg==", null, false, "993c76e9-7af1-4752-88ef-bc355e11e084", false, "manager@recipes.com" },
-                    { "864624f5-a887-43f8-9e09-8ad194effef7", 0, "0ddaeb41-9669-4d77-8327-a82fe98fe6f3", "admin@recipes.com", true, null, null, false, null, "ADMIN@RECIPES.COM", "ADMIN@RECIPES.COM", "AQAAAAEAACcQAAAAEBySkYgV/itwdCghsHRqCjBS2kGpgEiciQPaTBLZhcgUjcfBALI4jZCiFsgMwBp8kQ==", null, false, "c689fdf9-8fc5-44d7-9c45-d86b33277907", false, "admin@recipes.com" }
->>>>>>> Stashed changes:Recipes/Recipes.Core/Migrations/20221112162934_init1.cs
+                    { "7355ae1f-f738-4922-87af-c0d031617a84", 0, "d6871870-f8b6-4143-8c73-579e3995f511", "user@recipes.com", true, null, null, false, null, "USER@RECIPES.COM", "USER@RECIPES.COM", "AQAAAAEAACcQAAAAEH47IyOcAhkV2OMC1+WdRGbhFAEZmDd5sF6V2DTA5cRKcgi929R8GD4AFSguN9AAzA==", null, false, "25e2fd6a-c5c2-43e4-ab20-3c6eda557d28", false, "user@recipes.com" },
+                    { "d9339d58-456e-4348-b3ea-8f1e012b0a5d", 0, "345c96d0-76ae-4f48-be57-e358bb51b8f3", "manager@recipes.com", true, null, null, false, null, "MANAGER@RECIPES.COM", "MANAGER@RECIPES.COM", "AQAAAAEAACcQAAAAEKizbjtOoFYcx2t9/Yqu1RZ6WBI1IdEEEjImkjW6ht6c1esmvinkLg+mYtcygW+NeQ==", null, false, "0480f694-5872-466a-8150-c570bd9bfe17", false, "manager@recipes.com" },
+                    { "f3b1723d-398c-459b-bcae-ceb4269efb68", 0, "da1148e5-a466-4bc9-83bd-9ea40501d105", "admin@recipes.com", true, null, null, false, null, "ADMIN@RECIPES.COM", "ADMIN@RECIPES.COM", "AQAAAAEAACcQAAAAEEvIL39BqX8ulGHdddDI7ZGpv5TH7aVIvq5jL3gHep25HRMezo2PrGk6dWZrhv0t3A==", null, false, "bffdaba5-60c4-4ea1-944f-713eed2ac72b", false, "admin@recipes.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -249,21 +262,12 @@ namespace Recipes.Core.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-<<<<<<< Updated upstream:Recipes/Recipes.Core/Migrations/20221112115320_init1.cs
-                    { "4a4dfafd-57d1-4169-a238-b017f4e8a81a", "19e03eb0-dd08-4447-b305-917572b6554f" },
-                    { "a97639bb-fbdd-46b4-ab20-5cc170c39bc6", "19e03eb0-dd08-4447-b305-917572b6554f" },
-                    { "4a4dfafd-57d1-4169-a238-b017f4e8a81a", "8bd7d40c-1aa7-4288-81ee-2686511fc442" },
-                    { "03806760-b913-402f-81fa-8e2e1cb9f2b2", "ca3f9430-8795-45b5-88eb-216c2fcd063e" },
-                    { "4a4dfafd-57d1-4169-a238-b017f4e8a81a", "ca3f9430-8795-45b5-88eb-216c2fcd063e" },
-                    { "a97639bb-fbdd-46b4-ab20-5cc170c39bc6", "ca3f9430-8795-45b5-88eb-216c2fcd063e" }
-=======
-                    { "5ee88ac3-2a1f-4f9f-b58b-2a51793d479c", "08170544-0f90-48f8-91de-4b2d060c11fd" },
-                    { "0cd6284e-47fb-4d76-ba0b-587ff7091d4b", "568da135-a8a5-4687-bda9-c89f039fdb84" },
-                    { "5ee88ac3-2a1f-4f9f-b58b-2a51793d479c", "568da135-a8a5-4687-bda9-c89f039fdb84" },
-                    { "0cd6284e-47fb-4d76-ba0b-587ff7091d4b", "864624f5-a887-43f8-9e09-8ad194effef7" },
-                    { "5ee88ac3-2a1f-4f9f-b58b-2a51793d479c", "864624f5-a887-43f8-9e09-8ad194effef7" },
-                    { "dfc014e7-9f2d-4d8f-8320-4036afe25bfa", "864624f5-a887-43f8-9e09-8ad194effef7" }
->>>>>>> Stashed changes:Recipes/Recipes.Core/Migrations/20221112162934_init1.cs
+                    { "64c1bc41-d7f8-4c02-b66a-755bd8e8467a", "7355ae1f-f738-4922-87af-c0d031617a84" },
+                    { "4b343352-1023-4d36-b925-795d7ec11953", "d9339d58-456e-4348-b3ea-8f1e012b0a5d" },
+                    { "64c1bc41-d7f8-4c02-b66a-755bd8e8467a", "d9339d58-456e-4348-b3ea-8f1e012b0a5d" },
+                    { "4b343352-1023-4d36-b925-795d7ec11953", "f3b1723d-398c-459b-bcae-ceb4269efb68" },
+                    { "64c1bc41-d7f8-4c02-b66a-755bd8e8467a", "f3b1723d-398c-459b-bcae-ceb4269efb68" },
+                    { "cb76ba20-b170-412c-86d5-ef8c7a634561", "f3b1723d-398c-459b-bcae-ceb4269efb68" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -314,6 +318,16 @@ namespace Recipes.Core.Migrations
                 name: "IX_InfoDishes_TagsId",
                 table: "InfoDishes",
                 column: "TagsId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Saves_infoDishId",
+                table: "Saves",
+                column: "infoDishId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Saves_userId",
+                table: "Saves",
+                column: "userId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -334,13 +348,16 @@ namespace Recipes.Core.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "InfoDishes");
+                name: "Saves");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "InfoDishes");
 
             migrationBuilder.DropTable(
                 name: "Categories");

@@ -18,6 +18,6 @@ namespace Recipes.Core
         public DbSet<Category> Categories { get; set; }
         public DbSet<InfoDishTag> Tags { get; set; }
         public DbSet<InfoDish> InfoDishes { get; set; }
-
+        public DbSet<Save> Saves { get; set; }
     }
 }
