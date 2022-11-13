@@ -3,7 +3,6 @@
 
 @{
     var categories = ViewBag.Categories as IEnumerable<Category>;
-    var tags = ViewBag.Tags as IEnumerable<InfoDishTag>;
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
@@ -49,30 +48,7 @@
                 <label asp-for="Preparation" class="control-label"></label>
                 <input asp-for="Preparation" class="form-control" />
                 <span asp-validation-for="Preparation" class="text-danger"></span>
-            </div>
-            <div class="wrapper">
-                <label asp-for="Tags" class="form-label"></label>
-                <div class="title">
-                    <img src="tag.svg" alt="icon">
-                    <h2>Tags</h2>
-                </div>
-                <div class="content">
-                    <p>Press enter or add a comma after each tag</p>
-                    <select class="form-select" size="3" id="tags" name="tags">
-                        @foreach (var c in tags)
-                        {
-                            <option value="@c.Title">@c.Title</option>
-                        }
-                    </select>
-                    <ul><input type="text" spellcheck="false"></ul>
-                </div>
-                <div class="details">
-                    <p><span>10</span> tags are remaining</p>
-                    <button>Remove All</button>
-                </div>
-            </div>
-            <script src="script.js"></script>
-            
+            </div>           
             <div class="mb-3">
                 <label asp-for="Categories" class="form-label"></label>
                 <select class="form-select" size="3" id="categories" name="categories">

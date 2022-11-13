@@ -41,7 +41,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<UsersRepository>();
 builder.Services.AddTransient<InfoDishRepository>();
 builder.Services.AddTransient<CategoryRepository>();
-builder.Services.AddTransient<TagsRepository>();
 builder.Services.AddTransient<SaveRepository>();
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
