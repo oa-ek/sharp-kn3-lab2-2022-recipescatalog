@@ -14,6 +14,6 @@ namespace Recipes.Core
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public User user { get; set; }
-        public InfoDish infoDish { get; set; }
+        public InfoDish? infoDish { get; set; }
     }
 }

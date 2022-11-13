@@ -19,8 +19,8 @@ namespace Recipes.UI.Controllers
         {
             var user = await usersRepository.GetCurrentUser();
             var infoDish =  InfodishRepository.GetInfoDish(id);
-            //var list = new List<InfoDish>();
-            //list.Add(infoDish);
+            var list = new List<InfoDish>();
+            list.Add(infoDish);
             await saveRepository.Create(user, infoDish);
             ViewBag.Saves = await saveRepository.GetAllSave(user); 
             return View("Index");
