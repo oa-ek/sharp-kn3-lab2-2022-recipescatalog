@@ -1,0 +1,51 @@
+﻿@using Recipes.Core
+
+@{
+    ViewData["Title"] = "Результати пошуку:";
+    //Layout = "~/Views/Shared/_BreezeLayout.cshtml";
+    var infoDishes = ViewBag.InfoDishes as List<InfoDish>;
+}
+<div class="content-wrapper pb-0 text-center">
+    <h1>@ViewData["Title"]</h1>
+
+    <br />
+    <section class="best-receipe-area">
+    <tbody>
+        <div class="container row">
+            @foreach (var item in infoDishes)
+            {
+                <div class="col-sm-3">
+                    <div class="card card-block">
+                        <img class="card-img-top img-thumbnail" style="height: 180px; width: 100%; display: block;" src="~/@item.IconPath" alt="@item.IconPath">
+                        <div class="card-block">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">Категорія: @item.Categories.NameCategory</p>
+                            <input type="hidden" value="@item.Id" />
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@item.Id">Редагувати</a>
+                                        <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@item.Id">Деталі</a>
+                                <a class="btn btn-sm btn-outline-secondary" asp-action="Delete" asp-route-id="@item.Id">Видалити</a>                       
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+            <!-- ##### Footer Area Start ##### -->
+            <!-- ##### All Javascript Files ##### -->
+            <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+            <!-- Popper js -->
+            <script src="/js/bootstrap/popper.min.js"></script>
+            <!-- Bootstrap js -->
+            <script src="/js/bootstrap/bootstrap.min.js"></script>
+            <!-- All Plugins js -->
+            <script src="/js/plugins/plugins.js"></script>
+            <!-- Active js -->
+            <script src="/js/active.js"></script>
+    </tbody>
+    </section>
+
+</div>

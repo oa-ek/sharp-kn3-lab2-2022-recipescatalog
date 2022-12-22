@@ -12,41 +12,18 @@
 </div>
 <hr />
 <br />
-<!-- Receipe Post Search -->
-<div class="row d-flex justify-content-center">
-    <div class="col-md-10 col-lg-9 col-xl-8">
-        <div class="card shadow-lg p-3 mb-5 rounded">
-            <div class="card-header bg-white">
-                <h4 class="mb-1">Пошук рецептів</h4>
-                <small class="text-muted"></small>
-            </div>
 
-            <form asp-action="Search" method="get">
-                <div class="row g-3">
-                    <div class="col-md-3">
-                        <label style="margin: 0.2em;">Назва</label>
-                        <input type="text" class="form-control" name="title" placeholder="Борщ" required>
-                    </div>
-
-                    <div class="col-md-3">
-                        <label style="margin: 0.2em;">Складність</label>
-                        <input type="text" class="form-control" name="difficulty" placeholder="Легке приготування" required>
-                    </div>
-
-                    <div class="col-md-3">
-                        <label style="margin: 0.2em;">Час приготування</label>
-                        <input type="text" class="form-control" name="cookingTime" placeholder="2 години" required>
-                    </div>               
-                    <div class="col-md-1 d-grid gap-2">
-                        <label> </label>
-                        <button type="submit" class="btn btn-success">Пошук</button>
-                    </div>
-                </div>
-            </form>
+<form method="get" class="nav-link form-inline mt-2 mt-md-0" action="/Search/SearchInfoDish">
+    <div class="input-group">
+        <input type="text" class="form-control" name="infoDishname" placeholder="Search">
+        <div class="input-group-append">
+            <span class="input-group-text">
+                <i class="mdi mdi-magnify">Пошук</i>
+            </span>
         </div>
     </div>
-</div>
-<hr />
+</form> 
+
 <br />
 
  <section class="best-receipe-area">

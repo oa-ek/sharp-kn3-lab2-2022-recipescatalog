@@ -51,22 +51,22 @@ namespace Recipes.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4f8cc0e5-784e-4fa3-a9bc-e53dd21283c6",
-                            ConcurrencyStamp = "1cb9f892-da2b-4cf2-ae0a-78027a526eb1",
+                            Id = "2ac81925-adc1-41b0-9c52-86233a00b86e",
+                            ConcurrencyStamp = "06558f21-ee7c-4822-ba83-dd07b86daa47",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "d8bfd126-a3f4-48d3-a115-1613c65f642e",
-                            ConcurrencyStamp = "54114cfe-55d3-4188-ae35-991f7274160f",
+                            Id = "8cdc1dd9-d1e2-40fc-b8f2-fda545e898d9",
+                            ConcurrencyStamp = "8b35a0b8-d2f0-4231-8629-6448d3f174ff",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "78cb791e-ab57-4213-9be4-d671a9bc8e7b",
-                            ConcurrencyStamp = "31d3718c-4dcc-48bd-8b51-c217b4fe571c",
+                            Id = "ca82e312-0b5d-4757-baa6-2008c98dc425",
+                            ConcurrencyStamp = "ff574481-5556-4344-9c5c-355bc1774903",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -163,33 +163,33 @@ namespace Recipes.Core.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "ebb7f18e-d7f4-40e6-a94a-fb4be1d103ca",
-                            RoleId = "4f8cc0e5-784e-4fa3-a9bc-e53dd21283c6"
+                            UserId = "0654538a-7dbe-4275-a59c-12f0350c1acc",
+                            RoleId = "2ac81925-adc1-41b0-9c52-86233a00b86e"
                         },
                         new
                         {
-                            UserId = "ebb7f18e-d7f4-40e6-a94a-fb4be1d103ca",
-                            RoleId = "d8bfd126-a3f4-48d3-a115-1613c65f642e"
+                            UserId = "0654538a-7dbe-4275-a59c-12f0350c1acc",
+                            RoleId = "8cdc1dd9-d1e2-40fc-b8f2-fda545e898d9"
                         },
                         new
                         {
-                            UserId = "ebb7f18e-d7f4-40e6-a94a-fb4be1d103ca",
-                            RoleId = "78cb791e-ab57-4213-9be4-d671a9bc8e7b"
+                            UserId = "0654538a-7dbe-4275-a59c-12f0350c1acc",
+                            RoleId = "ca82e312-0b5d-4757-baa6-2008c98dc425"
                         },
                         new
                         {
-                            UserId = "2479730d-82f3-4dda-9d5c-28b7c19addd9",
-                            RoleId = "d8bfd126-a3f4-48d3-a115-1613c65f642e"
+                            UserId = "a34b55ae-5624-439e-ade8-30098fad3b7a",
+                            RoleId = "8cdc1dd9-d1e2-40fc-b8f2-fda545e898d9"
                         },
                         new
                         {
-                            UserId = "2479730d-82f3-4dda-9d5c-28b7c19addd9",
-                            RoleId = "78cb791e-ab57-4213-9be4-d671a9bc8e7b"
+                            UserId = "a34b55ae-5624-439e-ade8-30098fad3b7a",
+                            RoleId = "ca82e312-0b5d-4757-baa6-2008c98dc425"
                         },
                         new
                         {
-                            UserId = "270dffb2-bf58-4c58-bc35-2976002687c9",
-                            RoleId = "78cb791e-ab57-4213-9be4-d671a9bc8e7b"
+                            UserId = "b5757499-3d34-491a-ade2-aee103d4a29f",
+                            RoleId = "ca82e312-0b5d-4757-baa6-2008c98dc425"
                         });
                 });
 
@@ -392,49 +392,49 @@ namespace Recipes.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ebb7f18e-d7f4-40e6-a94a-fb4be1d103ca",
+                            Id = "0654538a-7dbe-4275-a59c-12f0350c1acc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9212df5b-e5aa-4515-a061-9c91116ad3b8",
+                            ConcurrencyStamp = "8b3fd1d7-d76a-45d4-86c8-31b46b8f2749",
                             Email = "admin@recipes.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@RECIPES.COM",
                             NormalizedUserName = "ADMIN@RECIPES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKqFb0JPXzsMe6/f/CuOGXmhimNNOt0CdFOe3bdavHB5futiONt2III6raCraKbamQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO8gT02jcEDVejDdoIjksx6lHyKqgEhb+Bbqv3mtD/GTLaSWyQZWbxhg90BNjUqZzQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b471db06-23be-4daf-9ef4-70b39cadea3b",
+                            SecurityStamp = "779abf1a-c9c2-443d-8326-751236fd66fa",
                             TwoFactorEnabled = false,
                             UserName = "admin@recipes.com"
                         },
                         new
                         {
-                            Id = "2479730d-82f3-4dda-9d5c-28b7c19addd9",
+                            Id = "a34b55ae-5624-439e-ade8-30098fad3b7a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e77abf58-375f-4379-ba26-3248f91e7aea",
+                            ConcurrencyStamp = "b14a9521-4fa5-4ce1-a49b-ebdfaaff247c",
                             Email = "manager@recipes.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MANAGER@RECIPES.COM",
                             NormalizedUserName = "MANAGER@RECIPES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEOQ6GF82llmGRNVxdAHwvOMtcibN/0eZ/eSEcr9wXRrPLoG9GhDVleXi/kSXWEC1Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPvbZJxggLLOMpZHmUjJlGp43zXyv55YIhQqFlib+c9zv5QezVRUiDGEglY4Ann6Rg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "633186f3-9c04-4e8e-8a53-ce7ea1369b63",
+                            SecurityStamp = "6d06aca9-9106-4048-85f0-ef984906d41a",
                             TwoFactorEnabled = false,
                             UserName = "manager@recipes.com"
                         },
                         new
                         {
-                            Id = "270dffb2-bf58-4c58-bc35-2976002687c9",
+                            Id = "b5757499-3d34-491a-ade2-aee103d4a29f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "85443fd3-96d3-4695-accc-cdecfdcfd845",
+                            ConcurrencyStamp = "cecc8efa-d44e-4c07-a0fe-dc7a99eb32b8",
                             Email = "user@recipes.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@RECIPES.COM",
                             NormalizedUserName = "USER@RECIPES.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFcLkZPY/arBjZHW4eQDChfxrI1BLDAZb95dkvz5i3ATVp9WeaRsfiI+RXjtZ89npA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC1NA8KJSb4flF/qP2kzc5fnkLLVbpDBBUKHJSu90+7f/KerURRKy5IrfcnDPqItBw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7afe5f16-1dcd-42ad-8d02-eea15d4a43e0",
+                            SecurityStamp = "67eba42a-5da7-4638-b65e-b178021bfd9e",
                             TwoFactorEnabled = false,
                             UserName = "user@recipes.com"
                         });
